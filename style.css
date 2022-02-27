@@ -14,8 +14,6 @@
 
 body {
   background-color: white;
-  height: 100%;
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,10 +21,11 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 100%;
 }
 
 body > main {
-  height: 100%;
+  max-height: 80%;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -36,36 +35,86 @@ body > main {
 body > main > .main__left {
   width: 60%;
   background-image: url(images/bg-pattern-desktop.svg);
-  background-position: 20% 50%;
   background-repeat: no-repeat;
 }
 
 body > main > .main__left > .left__logo {
   margin-top: 50px;
-  margin-left: 100px;
+  margin-left: 150px;
 }
 
 body > main > .main__left > .main__left__center {
-  max-width: 700px;
-  max-height: 800px;
-  padding: 100px;
+  max-width: 800px;
+  max-height: 700px;
+  padding: 150px;
+  padding-top: 80px;
+  margin-top: -3.5rem;
 }
 
 body > main > .main__left > .main__left__center > h1 {
   text-transform: uppercase;
-  font-size: 3rem;
+  font-size: 3.5rem;
+  letter-spacing: 1rem;
+  line-height: 4rem;
 }
 
 body > main > .main__left > .main__left__center > h1 > span {
   color: var(--desaturated-red);
   font-weight: 200;
-  font-size: 3rem;
+  font-size: 3.5rem;
+}
+
+body > main > .main__left > .main__left__center > p {
+  color: var(--desaturated-red);
+  line-height: 1.7rem;
+  margin-top: -1rem;
+  max-width: 400px;
+}
+
+body > main > .main__left > .main__left__center > .email__box {
+  margin-top: 2rem;
+}
+
+body > main > .main__left > .main__left__center > .email__box > .left__email > input {
+  position: relative;
+  height: 40px;
+  width: 350px;
+  padding-left: 10px;
+  padding-right: 200px;
+  text-align: center;
+  border-radius: 100px;
+  border: 1px solid var(--desaturated-red);
+  color: var(--desaturated-red);
+  font-weight: 400;
+  font-size: 0.9rem;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+body > main > .main__left > .main__left__center > .email__box > .left__email > .background__arrow {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 40px;
+  width: 70px;
+  position: absolute;
+  margin-left: 300px;
+  margin-top: -40px;
+  border-radius: 40px;
+  -webkit-box-shadow: 0 0.4rem 1rem var(--desaturated-red);
+          box-shadow: 0 0.4rem 1rem var(--desaturated-red);
+  background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+}
+
+body > main > .main__left > .main__left__center > .email__box > .left__email > .background__arrow > img {
+  margin-left: 42%;
+  margin-top: 15%;
 }
 
 body > main > .main__right {
-  width: 40%;
-  height: 100%;
+  width: 45%;
+  height: 80%;
+  position: relative;
   margin-top: -10px;
+  right: 0;
 }
 
 body > footer {
