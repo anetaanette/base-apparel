@@ -1,20 +1,43 @@
-let user = {
-email: document.querySelector(".input-email"),
-button: document.querySelector(".button").addEventListener("click", validEmail)
-} 
+const submitBtn = document.querySelector(".background__arrow");
+const email = document.querySelector(".email__box");
+const emailBorder = document.querySelector(".input-email");
 
 // regEx for email verification
 const regEx =
-  /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-  const submitBtn = document.querySelector(".background__arrow");
-  const email = document.querySelector(".email__box");
-
+  
   submitBtn.addEventListener("click", errorPop);
 
-  function errorPop(e) {
+  function errorPop() {
+      emailBorder.style.border = "1.8px solid var(--soft-red)";
       if (email.value === "" || !regEx.test(email.value)) {
-        //  let errorIcon = document.querySelector("")
+          let errorIcon = document.querySelector(".error");
+          let errorMsg = document.querySelector(".error_message");
+
+          // display the message when email is invalid
+          errorIcon.style.display = "block";
+          errorMsg.style.display = "block";
       }
   }
-// input onClick border: 1px solid var(--soft-red);
+
+emailBorder.addEventListener("click", deleteValue);
+
+  function deleteValue() {
+      emailBorder.value = "";
+  }
+
+
+
+ /* email.addEventListener("keydown", errorFade);
+
+function errorFade(){
+    let errorIcon = document.querySelector(".error");
+    let errorMsg = document.querySelector(".error-message");
+
+    //show the error message on the screen if the email is invalid
+    errorIcon.style.display = "none";
+    errorMsg.style.display = "none";
+
+}
+*/
